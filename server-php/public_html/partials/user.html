@@ -1,0 +1,33 @@
+<form ng-submit="handleSaveUser()" ng-show="AuthorizedUser.isLoggedIn" class="form-horizontal">
+  <div class="alert alert-success" ng-show="saveSuccessful">
+    <strong>Your changes were saved!</strong>
+  </div>
+  <div class="alert alert-error" ng-show="errorMessage">
+    <strong>{{errorMessage}}</strong>
+  </div>
+  <legend>Welcome, {{UserData.username}}!</legend>
+  <div class="control-group">
+    <label for="username" class="control-label">User Name </label>
+    <div class="controls"><input type="text" id="username" name="username" value="{{UserData.username}}" maxlength="20" disabled></div>
+  </div>
+  <div class="control-group">
+    <label for="firstName" class="control-label">First Name </label>
+    <div class="controls"><input type="text" id="firstName" name="firstName" ng-model="UserData.firstName" maxlength="25" required></div>
+  </div>
+  <div class="control-group">
+    <label for="lastName" class="control-label">Last Name </label>
+    <div class="controls"><input type="text" id="lastName" name="lastName" ng-model="UserData.lastName" maxlength="25" required></div>
+  </div>
+  <div class="control-group">
+    <label for="email" class="control-label">Email </label>
+    <div class="controls"><input type="text" id="email" name="email" ng-model="UserData.email" maxlength="50" required></div>
+  </div>
+  <div class="control-group">
+    <label for="phone" class="control-label">Phone Number </label>
+    <div class="controls"><input type="text" id="phone" name="phone" ng-model="UserData.phone" maxlength="12" required></div>
+  </div>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+  <input type="hidden" name="userId" id="userId" value="{{UserData.userId}}">
+</form>

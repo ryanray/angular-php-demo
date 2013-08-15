@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>User Demo</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/app.min.js"></script>
+  </head>
+  <body ng-controller="MainCtrl" ng-model="AuthorizedUser">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">User Demo</a>
+          <a class="pull-right" ng-click="redirectToLogin()" ng-hide="AuthorizedUser.isLoggedIn" style="margin-top:10px">Login</a>
+          <a class="pull-right" ng-click="logout()" ng-show="AuthorizedUser.isLoggedIn" style="margin-top:10px">Logout</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div ng-view>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
